@@ -7,11 +7,11 @@
  * @func: prints the value in node
  * Return: (Success)
  */
-void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
+void binary_tree_inorder(const binary_tree_t *tree, UNUSED void (*func)(int))
 {
 	const binary_tree_t *node = tree;
 
-	if (node->left == NULL)
+	if (node == NULL)
 		return;
 
 	binary_tree_inorder(node->left, func);
