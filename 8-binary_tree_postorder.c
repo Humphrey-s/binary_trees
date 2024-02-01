@@ -7,13 +7,14 @@
  * @func: prints value in node
  * Return: (Success)
  */
-binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
+void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
-	binary_tree_t *node = tree;
+	const binary_tree_t *node = tree;
 
-	if (node->left != NULL)
+	if (node == NULL)
 		return;
 
-	binary_tree_postorder(node->left);
-	binary
+	binary_tree_postorder(node->left, func);
+	binary_tree_postorder(node->right, func);
+	func(node->n);
 }
