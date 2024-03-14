@@ -47,7 +47,7 @@ int main(void)
     
     first = root->left->left->left;
     second = root->right->right->right;
-    ancestor = binary_trees_ancestor(NULL, NULL);
+    ancestor = binary_trees_ancestor(second, first);
     printf("Lowest common ancestor of (%d) and (%d) is: ", first->n, second->n);
 
     if (ancestor)

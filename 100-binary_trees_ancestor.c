@@ -31,6 +31,16 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 		if (fparent == sparent)
 			return (fparent);
 
+		ptr = fparent;
+
+		while (ptr != NULL)
+		{
+			if (ptr == sparent)
+				return (sparent);
+
+			ptr = ptr->parent;
+		}
+	
 		fparent = fparent->parent;
 		sparent = sparent->parent;
 	}
