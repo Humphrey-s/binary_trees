@@ -26,7 +26,7 @@ return (_pow - 1 == node);
 }
 
 /**
- * _pow_recursion - x raised to the power of y
+ * powr - x raised to the power of y
  * @x: the value to exponentiate
  * @y: the power to raise x to
  * Return: x to the power of y
@@ -35,7 +35,7 @@ int powr(int x, int y)
 {
 	if (y < 0)
 		return (-1);
-	
+
 	if (y == 0)
 		return (1);
 	else
