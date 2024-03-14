@@ -45,7 +45,11 @@ int binary_tree_is_full(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
+int binary_tree_is_perfect(const binary_tree_t *tree);
 
+int powr(int x, int y);
+size_t binary_tree_size(const binary_tree_t *tree);
+size_t binary_tree_height(const binary_tree_t *tree);
 size_t binary_tree_node_count(const binary_tree_t *tree, size_t *i);
 binary_tree_t *find_most_left_node(binary_tree_t *root);
 void find_number_bleaves(const binary_tree_t *tree, size_t *i);
