@@ -32,9 +32,11 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 			return (fparent);
 
 		ptr = fparent;
-
 		while (ptr != NULL)
 		{
+			if (ptr == second)
+				return (ptr);
+
 			if (ptr == sparent)
 				return (sparent);
 
