@@ -10,6 +10,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 {
 	binary_tree_t *sparent;
 	binary_tree_t *fparent;
+	__attribute__((unused))binary_tree_t *ptr;
 
 	if (!first || !second)
 		return (NULL);
@@ -30,31 +31,30 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 		if (fparent == sparent)
 			return (fparent);
 
+		ptr = fparent;
+
+		while (ptr != NULL)
+		{
+			if (ptr == sparent && ptr != NULL)
+				return (ptr);
+
+			printf("%d, ", ptr->n);
+			ptr = ptr->parent;
+		}
+
+		ptr = sparent;
+	
+		while (ptr != NULL)
+		{
+			if (ptr == fparent && ptr != NULL)
+				return (ptr);
+			printf("%d, ", ptr->n);
+			ptr = ptr->parent;
+		}
+
 		fparent = fparent->parent;
 		sparent = sparent->parent;
 	}
-
-	sparent = second->parent;
-        fparent = first->parent;
-
-	while (fparent != NULL && sparent != NULL)
-        {
-                if (fparent == sparent)
-                        return (fparent);
-
-                fparent = fparent->parent;
-        }
-
-	sparent = second->parent;
-        fparent = first->parent;
-
-	while (fparent != NULL && sparent != NULL)
-        {
-                if (fparent == sparent)
-                        return (fparent);
-
-                sparent = sparent->parent;
-        }
 
 return (NULL);
 }
