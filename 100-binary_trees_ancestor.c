@@ -13,8 +13,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	if ((first == NULL) || (second == NULL))
 		return (NULL);
 
-	if (ptr == second)
-		return (ptr);
+	if (first == second)
+		return (first);
 
 	while (ptr != NULL)
 	{
