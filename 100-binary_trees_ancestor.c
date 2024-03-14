@@ -31,7 +31,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 		if (fparent == sparent)
 			return (fparent);
 
-		ptr = fparent;
+		/*ptr = fparent;
 
 		while (ptr != NULL)
 		{
@@ -40,7 +40,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 
 			printf("%d, ", ptr->n);
 			ptr = ptr->parent;
-		}
+		}*/
 
 		ptr = sparent;
 	
