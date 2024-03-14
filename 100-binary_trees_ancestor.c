@@ -8,45 +8,31 @@
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
-	binary_tree_t *ptr = second->parent;
+	binary_tree_t *sparent;
+	binary_tree_t *fparent;
 
-	if ((first == NULL) || (second == NULL))
+	if (!first || !second)
 		return (NULL);
+
+	sparent = second->parent;
+	fparent = first->parent;
 
 	if (first == second)
 	{
-		if (ptr->right == second)
-		{
-			return (ptr->right);
-		}
-		else if (ptr->left == second)
-		{
-			return (ptr->left);
-		}
+		if (sparent->right == second)
+			return (sparent->right);
+		if (sparent->left == second)
+			return (sparent->left);
 	}
 
-	while (ptr != NULL)
+	while (fparent != NULL && sparent != NULL)
 	{
-		if (first == ptr)
-			return (ptr);
+		if (fparent == sparent)
+			return (fparent);
 
-		if (first->parent == ptr)
-			return (ptr);
-
-		ptr = ptr->parent;
+		fparent = fparent->parent;
+		sparent = sparent->parent;
 	}
 
-	ptr = first->parent;
-
-	while (ptr != NULL)
-	{
-		if (second == ptr)
-			return (ptr);
-
-		if (second->parent == ptr)
-			return (ptr);
-
-		ptr = ptr->parent;
-	}
 return (NULL);
 }
